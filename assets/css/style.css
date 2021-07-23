@@ -67,7 +67,7 @@ body {
 }
 
 #v-pills-tabContent {
-  padding: 0 25px 100px 0;
+  padding: 0 0 100px 0;
 }
 
 .card-title {
@@ -128,7 +128,6 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
-  right: 50px;
   position: absolute;
   z-index: 10;
   border: 1px solid rgb(221, 221, 221);

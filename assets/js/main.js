@@ -64,15 +64,25 @@ loadContent = () => {
     function refreshView(index) {
       itemHTML = "";
       items[index].forEach((element) => {
+        function shippingFee() {
+          if (element.params.shippingFee == "FREE") {
+            return "Ücretsiz Kargo";
+          }
+        }
+
         itemHTML += `<div class="swiper-slide">
                         <div class="card mb-2">
-                            <img class="card-img-top swiper-lazy" data-src="${element.image}" alt="${element.name}">
+                            <img class="card-img-top swiper-lazy" data-src="${
+                              element.image
+                            }" alt="${element.name}">
                             <div class="swiper-lazy-preloader"></div>
 
                             <div class="card-body">
                                 <h4 class="card-title">${element.name}</h4>
                             </div>
-                            <p class="card-text card-price"><span>${element.priceText}</span></p>
+                            <p class="card-text card-price"><span>${
+                              element.priceText
+                            }</span></p>
                             <div class="cargoSection">
                                 <div class="freeCargo">
                                     <div fill="#36b458" width="16" height="16" radius="0"
@@ -83,7 +93,7 @@ loadContent = () => {
                                             </path>
                                         </svg>
                                     </div>
-                                    <span>${element.shippingFee}</span>
+                                    <span>${shippingFee()}</span>
                                 </div>
                             </div>
                             <button class="btn btn-primary" onclick="AddToast()">Sepete Ekle</button>
@@ -117,6 +127,10 @@ function swiperLoad() {
     },
 
     breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 2,
+      },
       640: {
         slidesPerView: 2,
         spaceBetween: 4,
