@@ -18,11 +18,11 @@ body {
 }
 
 .shoppingMenu {
-  min-width: fit-content;
+  /* min-width: fit-content; */
 }
 
 .shopingContent {
-  max-width: 85%;
+  /* max-width: 85%; */
   height: 100%;
   text-align: center;
 }
@@ -52,7 +52,7 @@ body {
 
 .nav-pills .nav-link.active::before {
   position: absolute;
-  left: 50px;
+  left: 100px;
   /* top: 128px; */
   border-radius: 0px 0.25em 0.25em 0px;
   background-color: rgb(43, 80, 194);
@@ -67,7 +67,7 @@ body {
 }
 
 #v-pills-tabContent {
-  padding: 0 0 100px 0;
+  /* padding: 0 0 100px 0; */
 }
 
 .card-title {
@@ -274,8 +274,43 @@ body {
   text-decoration: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .shoppingMenu {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row !important;
+    overflow: overlay !important;
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+
+  .shoppingCard {
+    margin: 10px 0 10px 0;
+  }
+
+  #v-pills-tabContent {
+    padding-top: 10px;
+  }
+
+  .nav-pills .nav-link {
+    overflow: unset;
+    text-overflow: ellipsis;
+  }
+
+  .nav-pills .nav-link:hover {
+    color: rgb(51, 51, 51);
+    background-color: rgb(238, 238, 238);
+  }
+
+  .nav-pills .nav-link.active {
+    margin-left: 20px;
+    padding: 15px;
+    color: rgb(51, 51, 51);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
+    border-bottom: 3px solid rgb(54, 101, 243);
+  }
+
+  .nav-pills .nav-link.active::before {
     display: none;
   }
 }

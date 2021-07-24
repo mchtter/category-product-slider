@@ -1,5 +1,4 @@
 loadContent = () => {
-  console.log("1");
   const item = new XMLHttpRequest();
   item.open(
     "GET",
@@ -33,7 +32,6 @@ loadContent = () => {
       this.selectedElement = e.target.id[e.target.id.length - 1];
 
       refreshView(this.selectedElement);
-
       swiperLoad();
     });
 
@@ -54,9 +52,9 @@ loadContent = () => {
 
       element[0] = contentLengthCounter();
 
-      buttonHTML += ` <button class="nav-link ${text}" id="v-pills-special-tab-${index}" data-bs-toggle="pill"
+      buttonHTML += `<button class="nav-link ${text}" id="v-pills-special-tab-${index}" data-bs-toggle="pill"
                       data-bs-target="#v-pills-special" type="button" role="tab" aria-controls="v-pills-special"
-                      aria-selected="true"> <span> ${element[0]} </span> </button>`;
+                      aria-selected="true"> ${element[0]} </button>`;
     });
 
     refreshView(0);
@@ -69,7 +67,6 @@ loadContent = () => {
             return "Ücretsiz Kargo";
           }
         }
-
         itemHTML += `<div class="swiper-slide">
                         <div class="card mb-2">
                             <img class="card-img-top swiper-lazy" data-src="${
@@ -107,19 +104,13 @@ loadContent = () => {
     buttonArea.innerHTML = buttonHTML;
   };
   item.send();
-  console.log("2");
 };
 
 let toastArea = document.querySelector("#liveToast");
 function swiperLoad() {
-  console.log("3");
-  new Swiper(".mySwiper", {
-    slidesPerView: 5,
-    spaceBetween: 8,
-    slidesPerGroup: 4,
+  const mainSwiper = new Swiper(".mySwiper", {
     lazy: true,
-    //loop: true,
-    //loopFillGroupWithBlank: true,
+    setInitialSlide: 0,
 
     navigation: {
       nextEl: ".swiper-button-next",
@@ -130,22 +121,63 @@ function swiperLoad() {
       0: {
         slidesPerView: 1,
         spaceBetween: 2,
+        slidesPerGroup: 1,
       },
-      640: {
+      360: {
         slidesPerView: 2,
         spaceBetween: 4,
+        slidesPerGroup: 2,
       },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 8,
+      600: {
+        slidesPerView: 3,
+        spaceBetween: 6,
+        slidesPerGroup: 3,
       },
       1024: {
+        slidesPerView: 4,
+        spaceBetween: 8,
+        slidesPerGroup: 4,
+      },
+      1200: {
         slidesPerView: 5,
+        spaceBetween: 10,
+        slidesPerGroup: 5,
+      },
+      1600: {
+        slidesPerView: 6,
+        spaceBetween: 12,
+        slidesPerGroup: 6,
+      },
+      1920: {
+        slidesPerView: 7,
+        spaceBetween: 14,
+        slidesPerGroup: 7,
+      },
+      2150: {
+        slidesPerView: 8,
         spaceBetween: 16,
+        slidesPerGroup: 8,
+      },
+      2400: {
+        slidesPerView: 9,
+        spaceBetween: 18,
+        slidesPerGroup: 9,
+      },
+      2650: {
+        slidesPerView: 10,
+        spaceBetween: 20,
+        slidesPerGroup: 10,
+      },
+      2900: {
+        slidesPerView: 11,
+        spaceBetween: 22,
+        slidesPerGroup: 11,
       },
     },
   });
-  console.log("4");
+
+  mainSwiper.slideNext();
+  mainSwiper.slideTo(0, 1000, true);
 }
 
 function showLiveToast() {
@@ -195,7 +227,7 @@ function AddToast() {
 window.onload = () => {
   setTimeout(() => {
     swiperLoad();
-  }, 100);
+  }, 500);
 };
 
 loadContent();
