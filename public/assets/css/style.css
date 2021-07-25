@@ -295,7 +295,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row !important;
-    overflow: overlay !important;
+    overflow: auto !important;
     border-bottom: 1px solid rgb(221, 221, 221);
   }
 
