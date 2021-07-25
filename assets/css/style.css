@@ -18,6 +18,7 @@ body {
 }
 
 .shoppingMenu {
+  position: relative;
   /* min-width: fit-content; */
 }
 
@@ -29,7 +30,7 @@ body {
 
 .nav-pills .nav-link {
   text-align: left;
-  margin-left: 20px;
+  margin-left: 30px;
   padding: 15px;
   color: rgb(112, 112, 112);
   width: 90%;
@@ -44,7 +45,7 @@ body {
 }
 
 .nav-pills .nav-link.active {
-  margin-left: 20px;
+  margin-left: 30px;
   padding: 15px;
   color: rgb(43, 80, 194);
   background-color: rgb(241, 248, 254);
@@ -52,13 +53,14 @@ body {
 
 .nav-pills .nav-link.active::before {
   position: absolute;
-  left: 100px;
+  left: 12px;
   /* top: 128px; */
   border-radius: 0px 0.25em 0.25em 0px;
   background-color: rgb(43, 80, 194);
   width: 5px;
-  height: 50px;
+  height: 52px;
   content: "";
+  margin-top: -14px;
 }
 
 .item {
@@ -126,15 +128,29 @@ body {
   object-fit: cover;
 }
 
+.swiper-button-next {
+  right: -33px;
+}
+.swiper-button-next svg {
+  margin-left: -25px;
+}
+
+.swiper-button-prev {
+  left: -33px;
+}
+.swiper-button-prev svg {
+  margin-left: 25px;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
   z-index: 10;
   border: 1px solid rgb(221, 221, 221);
-  border-radius: 30rem;
+  border-radius: 50%;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
-  width: 2.12rem;
+  width: 4.25rem;
   height: 4.25rem;
   color: inherit;
   top: 4.75em;
@@ -148,7 +164,7 @@ body {
 }
 
 .card {
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; */
   box-sizing: border-box;
   position: relative;
   transition: box-shadow 100ms ease-in-out 0s;
@@ -302,7 +318,7 @@ body {
   }
 
   .nav-pills .nav-link.active {
-    margin-left: 20px;
+    margin-left: 30px;
     padding: 15px;
     color: rgb(51, 51, 51);
     background-color: rgb(255, 255, 255);

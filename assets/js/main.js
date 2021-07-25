@@ -1,11 +1,6 @@
 loadContent = () => {
   const item = new XMLHttpRequest();
-  item.open(
-    "GET",
-    "../assets/db/product-list.json",
-    // "https://private-088498-muco1.apiary-mock.com/questions",
-    true
-  );
+  item.open("GET", "../assets/db/product-list.json", true);
   item.onload = function () {
     let itemObject, itemList, itemHTML, categoryList;
     var selectedElement = 0;
@@ -32,6 +27,7 @@ loadContent = () => {
       this.selectedElement = e.target.id[e.target.id.length - 1];
 
       refreshView(this.selectedElement);
+
       swiperLoad();
     });
 
@@ -109,8 +105,11 @@ loadContent = () => {
 let toastArea = document.querySelector("#liveToast");
 function swiperLoad() {
   const mainSwiper = new Swiper(".mySwiper", {
-    lazy: true,
-    setInitialSlide: 0,
+    lazy: {
+      loadPrevNext: true,
+      loadPrevNextAmount: 2,
+      loadOnTransitionStart: true,
+    },
 
     navigation: {
       nextEl: ".swiper-button-next",
@@ -177,7 +176,7 @@ function swiperLoad() {
   });
 
   mainSwiper.slideNext();
-  mainSwiper.slideTo(0, 1000, true);
+  mainSwiper.slideTo(0, 1000, false);
 }
 
 function showLiveToast() {
