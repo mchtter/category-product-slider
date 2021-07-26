@@ -1,7 +1,7 @@
 # Segmentify Frontend Projesi
 
 
-Live Link: https://segmentifycard.web.app/
+Canlı Demo: https://segmentifycard.web.app/
 
 
 Masaüstü Görünüm
