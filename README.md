@@ -1,6 +1,9 @@
 # Segmentify Frontend Projesi
 
 
+Live Link: https://segmentifycard.web.app/
+
+
 Masaüstü Görünüm
 
 ![alt text](https://i.hizliresim.com/p02khso.png)
