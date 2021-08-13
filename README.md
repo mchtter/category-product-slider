@@ -1,19 +1,28 @@
-# Segmentify Frontend Projesi
+# Segmentify Frontend Project
+
+Segmentify Frontend Project, 
+
+Category Product Slider, 
+
+Lazy-Load, 
+
+Responsive, 
+
+Click Buy Event
+
+Live: https://segmentifycard.web.app/
 
 
-Canlı Demo: https://segmentifycard.web.app/
-
-
-Masaüstü Görünüm
+Desktop
 
 ![alt text](https://i.hizliresim.com/p02khso.png)
 
 
-Mobil Görünüm
+Mobile
 
 ![alt text](https://i.hizliresim.com/rhnokiu.png)
 
 
-Etkileşim
+Buy
 
 ![alt text](https://i.hizliresim.com/7tlahhu.png)
